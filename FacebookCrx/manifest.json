@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "导出BM内账户",
+  "version": "1.1",
+  "description": "需要进入到对应BM内的广告管理页面",
+  "permissions": ["webRequest", "storage","tabs","scripting"],
+  "host_permissions": ["*://*/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["xlsx.full.min.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["axios.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:5173/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
