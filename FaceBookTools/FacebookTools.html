@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "思源黑体", sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0;
+        background: #f5f7fa;
+        color: #333;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px 25px;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #222;
+        text-align: center;
+      }
+
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px 10px;
+        margin-top: 6px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.2s ease;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #4a90e2;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+      }
+
+      .btn {
+        margin-top: 12px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      .btn-primary {
+        background: #4a90e2;
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: #357ab7;
+      }
+
+      .btn-danger {
+        background: #e74c3c;
+        color: #fff;
+      }
+
+      .btn-danger:hover {
+        background: #c0392b;
+      }
+
+      #resultBox {
+        margin-top: 20px;
+        padding: 12px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        max-height: 300px;
+        overflow-y: auto;
+        font-size: 14px;
+        background: #fafafa;
+      }
+
+      .result-item {
+        padding: 8px;
+        margin: 6px 0;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .success {
+        color: #27ae60;
+        font-weight: bold;
+      }
+
+      .error {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Facebook 账户管理工具</h2>
+
+      <label>AccessToken</label>
+      <div style="display: flex; gap: 10px">
+        <input id="token" type="text" placeholder="请输入 AccessToken" />
+        <button id="getToken" class="btn btn-primary">获取</button>
+      </div>
+
+      <label>Facebook个人账号</label>
+      <input id="userID" placeholder="请输入 User ID" />
+
+      <label>BMID</label>
+      <input id="bmID" placeholder="请输入 BM ID" />
+
+      <label>账户ID (每行一个)</label>
+      <textarea id="myTextarea" rows="6" placeholder="例：1234567890"></textarea>
+
+      <div class="action-buttons">
+        <button id="addRole" class="btn btn-primary">添加权限</button>
+        <button id="deleteCampaigns" class="btn btn-danger">🗑️ 批量删除广告</button>
+        <button id="getSpendCap" class="btn btn-primary">批量获取 SpendCap</button>
+        <button id="exportAccounts" class="btn btn-primary">导出账户的广告状态</button>
+      </div>
+
+      <div id="resultBox"></div>
+    </div>
+
+    <script src="axios.min.js"></script>
+    <script src="xlsx.full.min.js"></script>
+    <script src="FacebookTools.js"></script>
+  </body>
+</html>
