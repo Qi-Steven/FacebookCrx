@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "FaceBook Tools 3.4",
+  "version": "3.4",
+  "permissions": ["webRequest", "storage","tabs","scripting","activeTab"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["xlsx.full.min.js"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["axios.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

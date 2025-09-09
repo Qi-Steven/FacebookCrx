@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        width: 220px;
+        padding: 12px;
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f7f9fc;
+        color: #333;
+      }
+
+      h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        text-align: center;
+        color: #444;
+      }
+
+      #parameters {
+        margin-bottom: 10px;
+        font-size: 13px;
+        color: #555;
+      }
+
+      button {
+        width: 100%;
+        padding: 8px 10px;
+        margin-top: 8px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.1s ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+      }
+
+      #refreshButton {
+        background: #4a90e2;
+        color: #fff;
+      }
+
+      #refreshButton:hover {
+        background: #357ab7;
+      }
+
+      #openFacebookTools {
+        background: #27ae60;
+        color: #fff;
+      }
+
+      #openFacebookTools:hover {
+        background: #1e874b;
+      }
+
+      #openExport {
+        background: #f39c12;
+        color: #fff;
+      }
+
+      #openExport:hover {
+        background: #d68910;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>进入 BM 广告管理工具页面<br />点击按钮即可操作</h3>
+
+    <div id="parameters"></div>
+
+    <button id="refreshButton">📥 导出账户</button>
+    <button id="openFacebookTools">☝🏻💡FaceBookTools</button>
+    <!-- <button id="openExport">📊 账户广告状态</button> -->
+
+    <script src="popup.js"></script>
+    <script src="axios.min.js"></script>
+    <script src="xlsx.full.min.js"></script>
+  </body>
+</html>
